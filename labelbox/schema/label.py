@@ -23,6 +23,7 @@ class Label(DbObject, Updateable, BulkDeletable):
     project = Relationship.ToOne("Project")
     data_row = Relationship.ToOne("DataRow")
     reviews = Relationship.ToMany("Review", False)
+    prediction = Relationship.ToOne("Prediction", False)
 
     @staticmethod
     def bulk_delete(labels):
