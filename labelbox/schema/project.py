@@ -337,7 +337,7 @@ class Project(DbObject, Updateable, Deletable):
         params = {label_param: label, model_param: prediction_model.uid,
                   data_row_param: data_row.uid, project_param: self.uid}
         res = self.client.execute(query_str, params)
-        return Prediction(self.client, res["data"]["createPrediction"])
+        return Prediction(self.client, res["createPrediction"])
 
 
 class LabelingParameterOverride(DbObject):
